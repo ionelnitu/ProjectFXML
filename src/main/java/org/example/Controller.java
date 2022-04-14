@@ -31,6 +31,8 @@ public class Controller {
     private TableView<Person> table;
 
     @FXML
+    private TableColumn<Person, Integer> tcId;
+    @FXML
     private TableColumn<Person, String> tcAddress;
 
     @FXML
@@ -143,6 +145,7 @@ public class Controller {
 
 
 
+        tcId.setCellValueFactory(new PropertyValueFactory<Person,Integer>("id"));
         tcFirstName.setCellValueFactory(new PropertyValueFactory<Person, String>("firstName"));
         tcLastName.setCellValueFactory(new PropertyValueFactory<Person, String>("lastName"));
         tcAddress.setCellValueFactory(new PropertyValueFactory<Person, String>("address"));
@@ -190,14 +193,21 @@ public class Controller {
     }
 
     @FXML
-    public void clearTable(){
-        table.getItems().clear();
+    public void clearTable() throws SQLException {
+
+                System.out.println("ss");
+                mySql.clearAll();
+                table.getItems().clear();
+
+
+
     }
 
 
     @FXML
-    public void deleteRow(){
+    public void deleteRow() throws SQLException {
         Person person= (Person) table.getSelectionModel().getSelectedItem();
+        mySql.delete(person);
         table.getItems().remove(person);
     }
 

@@ -40,6 +40,20 @@ static String pass="Parola123!";
 
     }
 
+    public boolean delete(Person person) throws SQLException {
+         PreparedStatement st=conn.prepareStatement("delete from contracts where idcontracts=?");
+         st.setInt(1,person.getId());
+         return st.execute();
+    }
+
+    public boolean clearAll() throws SQLException{
+         Statement st= conn.createStatement();
+         return st.execute("truncate table contracts");
+
+    }
+
+
+
 
 }
 

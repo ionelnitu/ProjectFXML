@@ -73,6 +73,7 @@
         </HBox>
         <TableView fx:id="table" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="1" GridPane.rowSpan="8">
             <columns>
+                <TableColumn fx:id="tcId" prefWidth="75.0" text="ID"/>
                 <TableColumn fx:id="tcFirstName" prefWidth="75.0" text="First Name"/>
                 <TableColumn fx:id="tcLastName" prefWidth="75.0" text="Last Name"/>
                 <TableColumn fx:id="tcAddress" prefWidth="75.0" text="Address"/>
