@@ -46,13 +46,6 @@ static String pass="Parola123!";
          return st.execute();
     }
 
-    public boolean clearAll() throws SQLException{
-         Statement st= conn.createStatement();
-         return st.execute("truncate table contracts");
-
-    }
-
-
 
 
 }

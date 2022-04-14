@@ -193,18 +193,6 @@ public class Controller {
     }
 
     @FXML
-    public void clearTable() throws SQLException {
-
-                System.out.println("ss");
-                mySql.clearAll();
-                table.getItems().clear();
-
-
-
-    }
-
-
-    @FXML
     public void deleteRow() throws SQLException {
         Person person= (Person) table.getSelectionModel().getSelectedItem();
         mySql.delete(person);

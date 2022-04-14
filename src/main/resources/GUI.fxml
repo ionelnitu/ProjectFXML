@@ -68,7 +68,6 @@
 
         <HBox GridPane.columnIndex="0" GridPane.rowIndex="9">
             <Button fx:id="saveForm" text="Save package" onAction="#savePerson"/>
-            <Button fx:id="clearForm" text="Clear Form" onAction="#clearTable"/>
             <Button fx:id="deleteRow" text="Delete Table Row" onAction="#deleteRow"/>
         </HBox>
         <TableView fx:id="table" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="1" GridPane.rowSpan="8">
