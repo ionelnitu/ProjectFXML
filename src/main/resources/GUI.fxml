@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane alignment="CENTER" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="org.example.Controller">
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15"/>
+    </padding>
+
+    <children>
+        <Button GridPane.columnIndex="6" GridPane.rowIndex="0" GridPane.halignment="RIGHT" fx:id="closeBT" onAction="#exit"/>
+       <Label fx:id="title" text="Project JavaFX" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <VBox GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <Label fx:id="firstName" text="First Name:"/>
+            <TextField fx:id="firstNameTF"/>
+            <Label fx:id="lastName" text="Last Name:"/>
+            <TextField fx:id="lastNameTF"/>
+            <Label fx:id="address" text="Address:"/>
+            <TextField fx:id="addressTF"/>
+            <Label fx:id="netSpeed" text="Network Speed Mb/s"/>
+        </VBox>
+        <HBox GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <ToggleButton fx:id="toggleBtn2" text="2">
+                <toggleGroup>
+                    <ToggleGroup fx:id="speedGroup"/>
+                </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="toggleBtn5" text="5" toggleGroup="$speedGroup"/>
+            <ToggleButton fx:id="toggleBtn10" text="10" toggleGroup="$speedGroup"/>
+            <ToggleButton fx:id="toggleBtn20" text="20" toggleGroup="$speedGroup"/>
+            <ToggleButton fx:id="toggleBtn50" text="50" toggleGroup="$speedGroup"/>
+            <ToggleButton fx:id="toggleBtn100" text="100" toggleGroup="$speedGroup"/>
+        </HBox>
+        <Label fx:id="bandwidth" text="Bandwidth" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <HBox GridPane.columnIndex="0" GridPane.rowIndex="4">
+            <ToggleButton fx:id="toggleBnd1" text="1">
+                <toggleGroup>
+                    <ToggleGroup fx:id="bandGroup"/>
+                </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="toggleBnd5" text="5" toggleGroup="$bandGroup"/>
+            <ToggleButton fx:id="toggleBnd10" text="10" toggleGroup="$bandGroup"/>
+            <ToggleButton fx:id="toggleBnd100" text="100" toggleGroup="$bandGroup"/>
+            <ToggleButton fx:id="toggleBndFlat" text="Flat" toggleGroup="$bandGroup"/>
+        </HBox>
+        <Label fx:id="duration" text="Duration" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+        <HBox GridPane.columnIndex="0" GridPane.rowIndex="6">
+            <ToggleButton fx:id="toggleDur1" text="1 year">
+                <toggleGroup>
+                    <ToggleGroup fx:id="drGroup"/>
+                </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="toggleDur2" text="2 years" toggleGroup="$drGroup"/>
+        </HBox>
+
+        <HBox GridPane.columnIndex="0" GridPane.rowIndex="9">
+            <Button fx:id="saveForm" text="Save package" onAction="#savePerson"/>
+            <Button fx:id="clearForm" text="Clear Form" onAction="#clearTable"/>
+            <Button fx:id="deleteRow" text="Delete Table Row" onAction="#deleteRow"/>
+        </HBox>
+        <TableView fx:id="table" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="1" GridPane.rowSpan="8">
+            <columns>
+                <TableColumn fx:id="tcFirstName" prefWidth="75.0" text="First Name"/>
+                <TableColumn fx:id="tcLastName" prefWidth="75.0" text="Last Name"/>
+                <TableColumn fx:id="tcAddress" prefWidth="75.0" text="Address"/>
+                <TableColumn fx:id="tcSpeed" prefWidth="75.0" text="Speed"/>
+                <TableColumn fx:id="tcBandwidth" prefWidth="75.0" text="Bandwidth"/>
+                <TableColumn fx:id="tcDuration" prefWidth="75.0" text="Duration"/>
+            </columns>
+        </TableView>
+
+
+    </children>
+</GridPane>

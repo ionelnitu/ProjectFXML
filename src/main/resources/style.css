@@ -1,0 +1,48 @@
+.root{
+-fx-border-radius: 20 20 20 20;
+-fx-background-radius: 20 20 20 20;
+-fx-background-color:#eacbc3;
+}
+#title{
+-fx-font-size:16px;
+-fx-font-weight:BOLD;}
+#closeBT{
+-fx-graphic:url('close_icon.png');
+-fx-background-color: transparent;
+-fx-border-width:0.0;
+}
+
+#closeBT:hover{
+-fx-graphic:url('close_icon_hover.png');
+}
+
+#saveForm,#clearForm,#deleteRow{
+-fx-background-color: #dc6d71;
+-fx-text-fill:white;
+-fx-padding:5px;
+}
+
+#firstName,#lastName,#address,#netSpeed,#bandwidth,#duration{
+-fx-text-fill:BLACK;
+}
+
+#saveForm:hover,#clearForm:hover,#deleteRow:hover{
+-fx-background-color:#d75b60;
+-fx-text-fill:white;
+}
+
+.toggle-button:hover, .toggle-button:selected{
+-fx-background-color:#e59295;
+-fx-text-fill:BLACK;
+-fx-padding:7px;
+}
+
+
+
+
+
+
+
+
+
+
